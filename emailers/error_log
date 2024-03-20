@@ -1,0 +1,1 @@
+[22-Sep-2021 07:31:48 UTC] PHP Warning:  Use of undefined constant BASE_URL - assumed 'BASE_URL' (this will throw an Error in a future version of PHP) in /home4/shareittofriends/public_html/demo/ionetworks-php/emailers/download-resource.php on line 99

@@ -1,0 +1,46 @@
+
+# BEGIN WordPress
+# The directives (lines) between "BEGIN WordPress" and "END WordPress" are
+
+# dynamically generated, and should only be modified via WordPress filters.
+
+# Any changes to the directives between these markers will be overwritten.
+<IfModule mod_rewrite.c>
+RewriteEngine On
+
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule !.*\.php$ %{REQUEST_FILENAME}.php [QSA,L]
+
+
+RewriteRule  ^(industries)$                 industry.php?permalink=$2 [QSA]
+RewriteRule  ^(industries)/([a-zA-Z0-9+_-]+)$                 industry-details.php?permalink=$2 [QSA]
+
+RewriteRule  ^(news&media)/(PressRelease)$                 news-media.php?permalink=$2 [QSA]
+RewriteRule  ^(news&media)/(Events)$                 news-media.php?permalink=$2 [QSA]
+RewriteRule  ^(news&media)/([a-zA-Z0-9+_-]+)$                 newsmedia-details.php?permalink=$2 [QSA]
+RewriteRule  ^(news&media)$                 news-media.php?permalink=$1 [QSA]
+
+
+RewriteRule  ^(products)$                 category-product-page.php?permalink=$2 [QSA]
+RewriteRule  ^(products)/([a-zA-Z0-9+_-]+)$                 product-access-point.php?permalink=$2 [QSA]
+RewriteRule  ^(products)/([a-zA-Z0-9+_-]+)/([a-zA-Z0-9+_-]+)$                 product-detail.php?permalink=$3 [QSA]
+
+RewriteRule  ^(Contact-Us)/(Thank-You)$                 thankyou.php?permalink=$2 [QSA]
+RewriteRule  ^(Documentation)/(Resource-Download)$                 thankyou.php?permalink=$2 [QSA]
+
+
+RewriteRule  ^(Partner)/(Become-a-Partner)$                 partner.php?permalink=$2 [QSA]
+RewriteRule  ^(Become-a-Partner)/(Partner-Registration)$                 partner-registration.php?permalink=$2 [QSA]
+RewriteRule  ^(Become-a-Partner)/(Thank-You)$                 thank-you.php?permalink=$2 [QSA]
+
+RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+#RewriteRule  ^(blogs)/(wi-fi7-whitepaper)$            wi-fi7-whitepaper.php?permalink=$2 [QSA]
+
+RewriteBase /blog/
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /blog/index.php [L]
+</IfModule>
+
+# END WordPress
